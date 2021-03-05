@@ -97,37 +97,66 @@ textarea {
 
 
 html {
-  background-color: #333;
+  background-color:#196666;
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
-  font-size: 1 em;
-  height: 100%;
-}
-
-.wrapper {
-  /*add display:flex and set justify-content to space-between*/
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.div-1, .div-2, .div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   color: #fff;
-  line-height: 1.25em;
-  font-size: 1.5em;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: auto;
-  padding: .5em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1 em;
+  padding: 2em;
 }
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+}
+
+header, footer {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 4em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: solid 1px #fff;
+}
+
+main p {
+    font-size: 2em;
+}
+
+.flex-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    border-bottom: solid 1px #fff;
+  }
+
+footer {
+    border-top: solid 1px #fff;
+    /* margin-top: 1em; */
+}
+
+footer i {
+    padding: 20px 10px;
+}
+
 
 /* ==========================================================================
    Helper classes
@@ -209,13 +238,15 @@ body {
    Modify as content requires.
    ========================================================================== */
 @media all and (min-width: 1200px) {
-    .div-1, .div-2, .div-3 {
-      width: 30%;
+    .flex-item {
+      flex-basis: 30%;
+      border-bottom: none;
     }
 
-    .div-1, .div-2 {
+    #div-2 p {
         border-right: solid 1px #fff;
-        padding-right: 30px;
+        border-left: solid 1px #fff;
+        padding: 0 2em;
     }
 
 @media print,
